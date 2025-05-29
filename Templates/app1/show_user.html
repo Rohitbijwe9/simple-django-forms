@@ -1,8 +1,16 @@
+{% extends 'Layout.html' %}
+
 <!DOCTYPE html>
 <html>
 <head>
+    {% block title %}
+    <title>
+        show user
+    </title>
+    {% endblock %}
     
 <body>
+    {% block content %}
 
    {% if data %}
     <div class="success">
@@ -14,6 +22,8 @@
 
     </div>
   {% endif %} 
+
+  {% endblock %}
     
 </body>
 </html>>

@@ -48,20 +48,23 @@ def show(request):
 
 def UserFormView(request):
     template_name = 'app1/user_form.html'
+    form = UserForm()
+    #print(form)
+    #print('method is:',request.method)
 
     if request.method == 'POST':
         form = UserForm(request.POST)
+        #print(request.POST)
         if form.is_valid():
             #form.save()
-            request.session['user_data'] = form.cleaned_data
+            request.session['user_data'] = request.POST
             return redirect('show_url')
-    else:
-        form = UserForm()
+    
 
     context = {'form': form}
     return render(request, template_name, context)
 
-    
+
 def show_user_view(request):
     template_name = 'app1/show_user.html'
     data = request.session.get('user_data')

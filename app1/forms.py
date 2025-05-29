@@ -1,10 +1,14 @@
 from django import forms
 
 class UserForm(forms.Form):
-    first_name = forms.CharField(max_length=100)
+    amefirst_n = forms.CharField(max_length=100)
     last_name = forms.CharField(max_length=100)
     email = forms.EmailField()
     mobile = forms.CharField(max_length=13)
+
+
+
+    
 
     def clean_first_name(self):
         nm = self.cleaned_data.get('first_name')
@@ -37,7 +41,7 @@ class UserForm(forms.Form):
         return email
 
 
-    def phone(self):
+    def clean_phone(self):
         phn=self.cleaned_data.get('mobile')
         if len(phn)>13 or len(phn)<10:
             raise forms.ValidationError('invalid phone')
