@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<body>
+
+   {% if data %}
+    <div class="success">
+      <h3>Form Submitted Successfully!</h3>
+      <p><strong>First Name:</strong> {{ data.first_name }}</p>
+      <p><strong>Last Name:</strong> {{ data.last_name}}</p>
+      <p><strong>Email:</strong> {{ data.email }}</p>
+     <p><strong>Mobile:</strong> {{ data.mobile }}</p>
+
+    </div>
+  {% endif %} 
+    
+</body>
+</html>>
