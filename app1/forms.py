@@ -1,7 +1,7 @@
 from django import forms
 
 class UserForm(forms.Form):
-    amefirst_n = forms.CharField(max_length=100)
+    first_name = forms.CharField(max_length=100)
     last_name = forms.CharField(max_length=100)
     email = forms.EmailField()
     mobile = forms.CharField(max_length=13)
@@ -29,16 +29,6 @@ class UserForm(forms.Form):
 
         return lnm
 
-
-    
-    
-
-    def clean_email(self):
-        email=self.cleaned_data.get('email')
-        if '@' not in email or '.' not in email:
-            raise forms.ValidationError('invalid email')
-        
-        return email
 
 
     def clean_phone(self):

@@ -1,8 +1,8 @@
 from django.shortcuts import render,redirect
 from . forms import UserForm
 
-'''
 
+'''
 def UserFormView(request):
     template_name = 'app1/UserForm.html'
     message = ''
@@ -27,7 +27,7 @@ def UserFormView(request):
 
             request.session['form_info'] = {'first': first,'last': last,'mobile': mobile,'email': email}
 
-            return redirect('show_url')
+            #return redirect('show_url')
     return render(request,template_name,{'message': message, 'data': data})
 
 
@@ -69,6 +69,7 @@ def show_user_view(request):
     template_name = 'app1/show_user.html'
     data = request.session.get('user_data')
     if not data:
+        print('not data')
         return redirect('user_url')
 
     context={'data':data}

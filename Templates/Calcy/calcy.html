@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <h2>Calculator</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if result is not None %}
+        <h3>Result: {{ result }}</h3>
+    {% endif %}
+
+    {% if msg %}
+        <p style="color:red;">{{ msg }}</p>
+    {% endif %}
+</body>
+</html>

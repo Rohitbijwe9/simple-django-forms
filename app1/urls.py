@@ -18,3 +18,6 @@ urlpatterns=[
     path('userform/',UserFormView,name='user_url'),
     path('show/',show_user_view,name='show_url')
 ]
+
+
+

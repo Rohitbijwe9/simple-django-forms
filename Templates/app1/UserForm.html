@@ -48,7 +48,7 @@
 <body>
   <h2>Job Apply Form</h2>
 
-    <form method="post">
+    <form method="post" action="{% url 'show_url' %}">
     {% csrf_token %}
     <input type="text" name="first_name" placeholder="First Name" />
     <input type="text" name="last_name" placeholder="Last Name" />
@@ -69,7 +69,6 @@
       <p><strong>Mobile:</strong> {{ data.mobile }}</p>
       <p><strong>Email:</strong> {{ data.email }}</p>
     </div>
-    <a href="{% url 'demo_url' %}"><button>NEXT PAGE</button></a>
   {% endif %} -->
 </body>
 </html>
